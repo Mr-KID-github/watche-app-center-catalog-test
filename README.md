@@ -121,7 +121,7 @@ Minimal `firmware-app` entry:
     ],
     "sha256": "623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b",
     "sizeBytes": 3400368,
-    "imageVersion": "1.1",
+    "imageVersion": "V2.4.1",
     "signature": {
       "algorithm": "unsigned-dev"
     }

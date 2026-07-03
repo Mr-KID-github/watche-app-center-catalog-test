@@ -23,7 +23,7 @@ Catalog id:      phone-control
 Type:            firmware-app
 Release tag:     phone-control-v0.1.0
 Asset:           phone-control-esp32s3.bin
-Image version:   1.1
+Image version:   V2.4.1
 Size:            3400368 bytes
 SHA-256:         623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b
 Signature:       unsigned-dev

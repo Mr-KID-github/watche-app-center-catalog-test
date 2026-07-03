@@ -2,7 +2,7 @@
   "$schema": "./schemas/app-catalog.schema.json",
   "schemaVersion": 2,
   "catalogId": "watche-app-center-catalog-test",
-  "updatedAt": "2026-07-02T23:55:00Z",
+  "updatedAt": "2026-07-03T02:16:39Z",
   "apps": [
     {
       "id": "phone-control",
@@ -26,7 +26,7 @@
         ],
         "sha256": "623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b",
         "sizeBytes": 3400368,
-        "imageVersion": "1.1",
+        "imageVersion": "V2.4.1",
         "signature": {
           "algorithm": "unsigned-dev"
         }
