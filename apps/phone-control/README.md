@@ -35,6 +35,18 @@ Release asset:
 https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.0/phone-control-esp32s3.bin
 ```
 
+Repository mirrors:
+
+```text
+https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.0/phone-control-esp32s3.bin
+https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.0/phone-control-esp32s3.bin
+```
+
+Domestic mirrors can be added later by syncing this repository to a public Gitee
+repository and appending the Gitee raw/release asset URL to `firmware.mirrors`.
+No device-side credential or Gitee password is required because each downloaded
+file is verified by the catalog SHA-256.
+
 ## Compatibility
 
 ```text
@@ -68,15 +80,18 @@ sizeBytes <= 0x400000
 3. Confirm the embedded ESP image version.
 4. Calculate SHA-256 from the exact `.bin` file.
 5. Upload the binary as a GitHub Release asset.
-6. Update the `phone-control` entry in `apps.json`.
-7. Run:
+6. Optional: copy the same binary to `dist/phone-control/<version>/` so
+   repository-based mirrors can serve it.
+7. Update the `phone-control` entry in `apps.json`, including `firmware.mirrors`
+   when alternate public sources are available.
+8. Run:
 
    ```bash
    node tools/validate-catalog.mjs apps.json
    ```
 
-8. Confirm the public catalog URL returns the same metadata.
-9. Install from a real WatcheRobot device.
+9. Confirm the public catalog URL returns the same metadata.
+10. Install from a real WatcheRobot device.
 
 ## Device Acceptance
 

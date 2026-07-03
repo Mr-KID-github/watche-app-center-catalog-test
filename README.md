@@ -20,7 +20,8 @@ https://mr-kid-github.github.io/watche-app-center-catalog-test/apps.json
 ```
 
 The catalog file is static JSON published by GitHub Pages. Firmware binaries are
-hosted as GitHub Release assets.
+hosted as GitHub Release assets and can also list public HTTPS mirrors in
+`firmware.mirrors`.
 
 ## Why This Exists
 
@@ -32,6 +33,8 @@ For developers, this repository is the shared contract:
 
 - `apps.json` tells devices what apps exist and whether they are compatible.
 - GitHub Releases host immutable firmware binaries.
+- Repository/CDN mirrors give devices alternate public download paths when the
+  primary source is slow or blocked.
 - `sha256`, `sizeBytes`, and `imageVersion` let the device reject the wrong
   file before booting it.
 - CI validation keeps broken catalog entries out of the public feed.
@@ -47,6 +50,8 @@ V1 focuses on proving the ecosystem loop with `firmware-app`.
 - Target flash: `16MB`.
 - Max firmware image size: `0x400000` bytes.
 - Download URLs must be HTTPS.
+- `firmware.mirrors` is optional, but every mirror must be HTTPS and must serve
+  the exact same binary verified by `firmware.sha256`.
 - V1 dev releases may use `unsigned-dev + sha256`.
 - Production releases should move to `ecdsa-p256-sha256` with trusted key
   allowlist enforcement.
@@ -110,6 +115,10 @@ Minimal `firmware-app` entry:
   },
   "firmware": {
     "url": "https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.0/phone-control-esp32s3.bin",
+    "mirrors": [
+      "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.0/phone-control-esp32s3.bin",
+      "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.0/phone-control-esp32s3.bin"
+    ],
     "sha256": "623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b",
     "sizeBytes": 3400368,
     "imageVersion": "1.1",
@@ -128,6 +137,7 @@ Important details:
   the `.bin`.
 - `firmware.sha256` must be calculated from the exact uploaded Release asset.
 - `firmware.sizeBytes` must be no larger than `compat.otaSlotSize`.
+- `firmware.mirrors` should only contain public HTTPS URLs for the same binary.
 - `minLauncherVersion` should be raised when an app depends on newer launcher or
   installer behavior.
 
@@ -140,11 +150,12 @@ Use this flow for every firmware app release.
 3. Read the ESP image version from the build output.
 4. Calculate SHA-256 for the exact `.bin`.
 5. Create a GitHub Release and upload the binary asset.
-6. Update `apps.json` with the Release URL, `sha256`, `sizeBytes`, and
-   `imageVersion`.
-7. Run catalog validation.
-8. Open the public `apps.json` URL and confirm it returns the new metadata.
-9. Install from a real WatcheRobot device before promoting the release.
+6. Optional: publish the same binary to repository/CDN mirrors.
+7. Update `apps.json` with the Release URL, `mirrors`, `sha256`, `sizeBytes`,
+   and `imageVersion`.
+8. Run catalog validation.
+9. Open the public `apps.json` URL and confirm it returns the new metadata.
+10. Install from a real WatcheRobot device before promoting the release.
 
 Example validation command:
 
@@ -169,6 +180,7 @@ An app should not be added to this catalog unless it passes these checks:
 - The binary fits in the OTA slot.
 - The catalog entry passes validation.
 - The Release asset is downloadable over HTTPS.
+- Every mirror, if present, is downloadable over HTTPS.
 - The published `sha256` matches the downloaded asset.
 
 ## Security Model

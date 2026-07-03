@@ -111,6 +111,14 @@
           "type": "string",
           "pattern": "^https://"
         },
+        "mirrors": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "pattern": "^https://"
+          }
+        },
         "sha256": {
           "type": "string",
           "pattern": "^[a-fA-F0-9]{64}$"
@@ -147,4 +155,3 @@
     }
   }
 }
-

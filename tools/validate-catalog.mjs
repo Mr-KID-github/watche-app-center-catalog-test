@@ -82,6 +82,24 @@ for (const [index, app] of (catalog.apps ?? []).entries()) {
     if (!isHttpsUrl(firmware.url)) {
       fail(`${prefix}.firmware.url must be HTTPS`);
     }
+    if (firmware.mirrors !== undefined) {
+      if (!Array.isArray(firmware.mirrors)) {
+        fail(`${prefix}.firmware.mirrors must be an array when present`);
+      } else {
+        const mirrorUrls = new Set([firmware.url]);
+        for (const [mirrorIndex, mirrorUrl] of firmware.mirrors.entries()) {
+          if (!isHttpsUrl(mirrorUrl)) {
+            fail(`${prefix}.firmware.mirrors[${mirrorIndex}] must be HTTPS`);
+            continue;
+          }
+          if (mirrorUrls.has(mirrorUrl)) {
+            fail(`${prefix}.firmware.mirrors[${mirrorIndex}] duplicates another firmware URL`);
+            continue;
+          }
+          mirrorUrls.add(mirrorUrl);
+        }
+      }
+    }
     if (!isSha256(firmware.sha256)) {
       fail(`${prefix}.firmware.sha256 must be a 64-char hex digest`);
     }
@@ -105,4 +123,3 @@ if (errors.length > 0) {
 }
 
 console.log(`Catalog validation passed: ${catalog.apps.length} app(s)`);
-

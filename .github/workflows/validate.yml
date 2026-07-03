@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: "22"
       - run: node tools/validate-catalog.mjs apps.json
-
+      - run: node --test tools/test-validate-catalog.mjs

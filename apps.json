@@ -2,7 +2,7 @@
   "$schema": "./schemas/app-catalog.schema.json",
   "schemaVersion": 2,
   "catalogId": "watche-app-center-catalog-test",
-  "updatedAt": "2026-07-02T15:35:47Z",
+  "updatedAt": "2026-07-02T23:55:00Z",
   "apps": [
     {
       "id": "phone-control",
@@ -20,6 +20,10 @@
       },
       "firmware": {
         "url": "https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.0/phone-control-esp32s3.bin",
+        "mirrors": [
+          "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.0/phone-control-esp32s3.bin",
+          "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.0/phone-control-esp32s3.bin"
+        ],
         "sha256": "623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b",
         "sizeBytes": 3400368,
         "imageVersion": "1.1",
