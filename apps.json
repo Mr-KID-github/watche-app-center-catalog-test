@@ -19,10 +19,9 @@
         "minLauncherVersion": "0.0.0"
       },
       "firmware": {
-        "url": "https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.1/phone-control-esp32s3.bin",
+        "url": "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin",
         "mirrors": [
-          "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.1/phone-control-esp32s3.bin",
-          "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin"
+          "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.1/phone-control-esp32s3.bin"
         ],
         "sha256": "766dda89331b34e161a47807a52691653d702c26273266dc600df5bb7e457fab",
         "sizeBytes": 3439904,

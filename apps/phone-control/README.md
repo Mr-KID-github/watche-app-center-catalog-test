@@ -29,17 +29,16 @@ SHA-256:         766dda89331b34e161a47807a52691653d702c26273266dc600df5bb7e457fa
 Signature:       unsigned-dev
 ```
 
-Release asset:
+Primary repository source:
 
 ```text
-https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.1/phone-control-esp32s3.bin
+https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin
 ```
 
-Repository mirrors:
+Repository mirror:
 
 ```text
 https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.1/phone-control-esp32s3.bin
-https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin
 ```
 
 Domestic mirrors can be added later by syncing this repository to a public Gitee
