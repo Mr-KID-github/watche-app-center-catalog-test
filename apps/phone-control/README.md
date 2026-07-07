@@ -21,25 +21,25 @@ Phone Control is a good first catalog app because it is easy to understand:
 ```text
 Catalog id:      phone-control
 Type:            firmware-app
-Release tag:     phone-control-v0.1.0
+Release tag:     phone-control-v0.1.1
 Asset:           phone-control-esp32s3.bin
 Image version:   V2.4.1
-Size:            3400368 bytes
-SHA-256:         623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b
+Size:            3439904 bytes
+SHA-256:         766dda89331b34e161a47807a52691653d702c26273266dc600df5bb7e457fab
 Signature:       unsigned-dev
 ```
 
 Release asset:
 
 ```text
-https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.0/phone-control-esp32s3.bin
+https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.1/phone-control-esp32s3.bin
 ```
 
 Repository mirrors:
 
 ```text
-https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.0/phone-control-esp32s3.bin
-https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.0/phone-control-esp32s3.bin
+https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.1/phone-control-esp32s3.bin
+https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin
 ```
 
 Domestic mirrors can be added later by syncing this repository to a public Gitee
