@@ -2,14 +2,14 @@
   "$schema": "./schemas/app-catalog.schema.json",
   "schemaVersion": 2,
   "catalogId": "watche-app-center-catalog-test",
-  "updatedAt": "2026-07-03T02:16:39Z",
+  "updatedAt": "2026-07-07T04:56:30Z",
   "apps": [
     {
       "id": "phone-control",
       "name": "Phone Control",
       "description": "BLE phone control firmware app for WatcheRobot.",
       "type": "firmware-app",
-      "version": "0.1.0-dev",
+      "version": "0.1.1-dev",
       "publisher": "WatcheRobot",
       "compat": {
         "product": "WatcheRobot",
@@ -19,13 +19,12 @@
         "minLauncherVersion": "0.0.0"
       },
       "firmware": {
-        "url": "https://github.com/Mr-KID-github/watche-app-center-catalog-test/releases/download/phone-control-v0.1.0/phone-control-esp32s3.bin",
+        "url": "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.1/phone-control-esp32s3.bin",
         "mirrors": [
-          "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.0/phone-control-esp32s3.bin",
-          "https://raw.githubusercontent.com/Mr-KID-github/watche-app-center-catalog-test/main/dist/phone-control/0.1.0/phone-control-esp32s3.bin"
+          "https://cdn.jsdelivr.net/gh/Mr-KID-github/watche-app-center-catalog-test@main/dist/phone-control/0.1.1/phone-control-esp32s3.bin"
         ],
-        "sha256": "623097c8e56693c158c240b33b21ca9b586b003c5714329675b43e8b4f15956b",
-        "sizeBytes": 3400368,
+        "sha256": "766dda89331b34e161a47807a52691653d702c26273266dc600df5bb7e457fab",
+        "sizeBytes": 3439904,
         "imageVersion": "V2.4.1",
         "signature": {
           "algorithm": "unsigned-dev"
